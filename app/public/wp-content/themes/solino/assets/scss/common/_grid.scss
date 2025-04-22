@@ -1,0 +1,117 @@
+﻿$desktop: 1920px;
+$desktop-sm: 1370px;
+$tablet-h: 1024px;
+$tablet-v: 768px;
+$phone: 648px;
+
+//Grid System
+$gap: 1rem;
+
+section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+
+  &.pad-top {
+    padding: 5rem 0 0;
+  }
+
+  &.pb {
+    padding: 0 0 5rem;
+  }
+
+  @media only screen and (max-width: $tablet-v) {
+    padding: 2rem 0;
+  }
+
+  &.carousel-slider {
+    // margin: 0 0 0 5vw;
+    // padding: 4rem 0 10rem;
+  }
+}
+
+.container {
+  padding: 0 5vw;
+
+  @media only screen and (max-width: $tablet-h) {
+    padding: 0 1rem;
+  }
+}
+
+[class*="col-"] {
+  display: grid;
+  gap: $gap;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: $gap;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+.col-3 {
+  grid-column: span 3;
+
+  @media only screen and (max-width: $desktop) {
+    grid-column: span 4;
+  }
+
+  @media only screen and (max-width: $tablet-h) {
+    grid-column: span 6;
+  }
+
+  @media only screen and (max-width: $phone) {
+    grid-column: span 12;
+  }
+}
+
+.col-4 {
+  grid-column: span 4;
+
+  @media only screen and (max-width: $tablet-h) {
+    grid-column: span 6;
+  }
+
+  @media only screen and (max-width: $tablet-v) {
+    grid-column: span 12;
+  }
+}
+
+.col-5 {
+  grid-column: span 5;
+}
+
+.col-6 {
+  grid-column: span 6;
+
+  @media only screen and (max-width: $tablet-h) {
+    grid-column: span 12;
+  }
+}
+
+.col-7 {
+  grid-column: span 7;
+}
+
+.col-8 {
+  grid-column: span 8;
+}
+
+.col-9 {
+  grid-column: span 9;
+}
+
+.col-10 {
+  grid-column: span 9;
+}
+
+.col-12 {
+  grid-column: span 12;
+}

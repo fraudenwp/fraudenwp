@@ -1,0 +1,33 @@
+.errItem span.error { color: #FF4802; font-size: 12px; margin-bottom: 5px; display: inline-block; }
+.formMsg {  font-size: 28px; margin-top: 70px; text-align: center; font-weight: 500; display: none; }
+#formSuccess { color: #000; }
+#formError { color: #ff3535; }
+.checkbox input { display: block; opacity: 0; width: 1px; height: 1px; }
+.checkbox.errItem { flex-direction: column; }
+.checkbox.errItem span.error { margin-top: 10px; }
+header .lang { text-transform: uppercase; }
+
+.head-item small { text-transform: uppercase; }
+#dealersForm .item.first { border-bottom: 0; }
+.contact-content #formSuccess .check-icon { justify-content: space-around; }
+#applyFormNew input:disabled, #applyFormNew textarea:disabled, #applyFormNew select:disabled, #applyFormNew input[type=email]:disabled, #applyFormNew input[type=tel]:disabled { opacity: 0.3; }
+#applyFormSend:disabled { background: #ccc; }
+.optErrorBox { display: none; text-align: center; margin: 40px 0; color: #ff4802; }
+.optErrorBox h4 { margin-bottom: 25px; font-size: clamp(4rem, 12vw, 3.4rem); }
+.optErrorBox p { font-size: 2.3rem !important; }
+#applyFormNew .formMoreArea { width: 100%; gap: 4rem 6rem; }
+#contact-form.close { padding-bottom: 300px; }
+
+form .item.formMoreArea { border-bottom: 0; }
+
+._df_thumb { width: 400px !important; }
+
+
+/*.home i.large svg { width: 12rem; }*/
+
+@media only screen and (max-width: 1380px){
+	.page-template-test-page .selectric-wrapper .selectric-items .selectric-scroll ul li:nth-child(4), .page-template-test-page .selectric-wrapper .selectric span, .page-template-test-page form input, .page-template-test-page form textarea { font-size: 1.7rem !important; }
+}
+@media only screen and (max-width: 1024px){
+	.page-template-test-page .selectric-wrapper .selectric-items .selectric-scroll ul li:nth-child(4), .page-template-test-page .selectric-wrapper .selectric span, .page-template-test-page form input, .page-template-test-page form textarea { font-size: 1.5rem !important; }
+}

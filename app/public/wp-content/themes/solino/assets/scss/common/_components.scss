@@ -1,0 +1,460 @@
+@import "../base/base";
+@import "_selectric";
+
+
+form {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+
+    &.row {
+        gap: 4rem 6rem;
+        
+        @media only screen and (max-width: $tablet-h) {
+            gap: 4rem 2rem;
+        }
+    }
+
+    @media only screen and (max-width: $tablet-h) {
+        padding: 4rem 0;
+    }
+
+    @media only screen and (max-width: $tablet-v) {
+        padding: 0;
+    }
+
+    .item {
+        border-bottom: solid $black .1rem;
+    }
+
+    label {
+        letter-spacing: 0.592593px;
+        font-size: 1.6rem;  
+        margin-bottom: 1rem;
+
+        @media only screen and (max-width: $tablet-h) {
+            font-size: 1.6rem;
+        }
+    }
+
+    input,
+    textarea {
+        font-size: 1.6rem;
+        width: 100%;
+        height: 6rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        @include fade-transition;
+        background: none;
+        color: $black;
+        font-size: 2rem;
+        font-weight: $font-medium;
+
+        &:focus {
+
+        }
+
+        &::-webkit-input-placeholder {
+            color: $black;
+        }
+
+        &:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: $black;
+        }
+
+        &::placeholder {
+            color: $black;
+        }
+    }
+
+    textarea {
+        resize: none;
+        padding: 0 0 2rem;
+        overflow: hidden;
+        height: 10rem;
+        color: $black;
+    }
+
+    .bottom {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        @media only screen and (max-width: $tablet-v) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        button {
+            margin-top: 2rem;
+        }
+    }
+
+    .select-check {
+        display: flex;
+    }
+
+    .verification-code {
+        max-width: 15rem;
+        justify-content: end;
+    }
+
+    .bottom {
+        .button {
+            @media only screen and (max-width: $tablet-v) {
+                width: 100%;
+            }
+        }
+    }
+
+    .message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+
+        h1 {
+            color: $white;
+
+            &:before {
+                background: $white;
+            }
+        }
+
+        p {
+            color: $white;
+        }
+
+        span {
+            font-size: clamp(2rem, 12vw, 3.4rem);
+            letter-spacing: -1.88889px;
+            color: $white;
+            text-align: center;
+            margin-top: 4rem;
+        }
+    }
+
+    .select-items {
+        display: flex;
+        flex-wrap: wrap;
+
+        .item {
+            width: 50%;
+            position: relative;
+        }
+    }
+
+    .item {
+        position: relative;
+        &.date {
+            input {
+                padding: 0px 1rem 0 5rem;
+            }
+        }
+        i {
+            position: absolute;
+            width: 5rem;
+            height: 6rem;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+#applyFormNew {
+    .formMoreArea {
+        width: 100%;
+        gap: 4rem 6rem;
+
+        @media only screen and (max-width: $tablet-v) {
+            gap: 4rem 0 !important;
+        }
+    }
+}
+
+/*#region Checkbox */
+.checkbox {
+    display: flex;
+    flex-grow: 1;
+    max-width: 100%;
+    margin: 1.5rem 0 1.5rem;
+
+    &:last-child {
+        margin: 0;
+    }
+
+    @media only screen and (max-width: $tablet-v) {
+        max-width: 100%;
+    }
+
+    .link {
+        text-align: left;
+        font-size: 1.5rem;
+
+        a {
+            color: $black;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    input {
+        padding: 0;
+        height: initial;
+        width: initial;
+        margin-bottom: 0;
+        display: none;
+        cursor: pointer;
+        position: relative;
+
+        &:checked {
+            + :after {
+                content: '';
+                background: $black url(../images/icons/check.svg) no-repeat center center;
+                background-size: 1.5rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 2.6rem;
+                height: 100%;
+                border-radius: .5rem;
+            }
+
+            + :before {
+                border: solid $black .1rem;
+            }
+
+            +label {
+                color: $black;
+            }
+        }
+    }
+
+    label {
+        position: relative;
+        cursor: pointer;
+        color: $black;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: $font-medium;
+
+        @media only screen and (max-width: $tablet-h) {
+            font-size: 1.6rem;
+        }
+
+        a {
+            color: $black;
+            text-decoration: underline;
+        }
+
+        &:before {
+            content: '';
+            width: 2.6rem;
+            height: 2.6rem;
+            flex-shrink: 0;
+            flex-basis: 2.6rem;
+            border: solid $black .1rem;
+            position: relative;
+            vertical-align: middle;
+            cursor: pointer;
+            margin-right: 1rem;
+            overflow: hidden;
+        }
+    }
+}
+
+
+
+.checkbox-radio {
+    display: flex;
+    gap: 2rem;
+    margin-top: 4rem;
+
+    input {
+        &[type="radio"],
+        &[type="checkbox"] {
+            opacity: 0;
+            display: none;
+            margin: 0;
+        }
+        &[type="radio"]+label,
+        &[type="checkbox"]+label {
+            cursor: pointer;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: $font-medium;
+            color: $black;
+            border-radius: 100vmax;
+            @include fade-transition;
+            gap: 1.4rem;
+
+            @media only screen and (max-width: $tablet-h) {
+                font-size: 1.4rem;
+            }
+
+            i {
+                width: 0;
+                height: 3.4rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: transparent;
+            }
+
+            svg {
+                width: 1.8rem;
+                height: 1.8rem;
+                fill: $black;
+                opacity: 0;
+                visibility: hidden;
+                @include fade-transition;
+            }
+        }
+        &[type="radio"]:checked+label,
+        &[type="checkbox"]:checked+label {
+            background: $black;
+            color: $white;
+            padding: 0 1.8rem 0 1.4rem;
+            @include fade-transition;
+
+            i {
+                width: 3.4rem;
+                height: 3.4rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: $yellow;
+
+                svg {
+                    width: 1.8rem;
+                    height: 1.8rem;
+                    fill: $black;
+                    opacity: 1;
+                    visibility: visible;
+                    @include fade-transition;
+                }
+            }
+        }
+    }
+}
+
+.form-wizard {
+    /* body */
+
+body {
+    background-color: #f2f5f8;
+    font-family: 'Karla', sans-serif;
+  }
+  
+  .main-content .wizard-form .progressbar-list {
+    &::before {
+      content: " ";
+      background-color: rgb(155, 155, 155);
+      border: 10px solid #fff;
+      border-radius: 50%;
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: 9px auto;
+      box-shadow: 1px 1px 3px #606060;
+      transition: all;
+    }
+  
+    &::after {
+      content: "";
+      background-color: rgb(155, 155, 155);
+      padding: 0px 0px;
+      position: absolute;
+      top: 14px;
+      left: -50%;
+      width: 100%;
+      height: 2px;
+      margin: 9px auto;
+      z-index: -1;
+      transition: all 0.8s;
+    }
+  
+    &.active::after {
+      background-color: #763cb0;
+    }
+  
+    &:first-child::after {
+      content: none;
+    }
+  
+    &.active::before {
+      font-family: "Font Awesome 5 free";
+      content: "\f00c";
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      padding: 6px;
+      background-color: #763cb0;
+      border: 1px solid #763cb0;
+    }
+  }
+  
+  .progressbar-list {
+    color: #6f787d;
+  }
+  
+  .active {
+    color: #000;
+  }
+  
+  /* card */
+  
+  .card {
+    img {
+      width: 40px;
+    }
+
+    cursor: pointer;
+  }
+  
+  .active-card {
+    color: #763cb0;
+    font-weight: bold;
+    border: 3px solid #763cb0;
+  }
+  
+  .form-check-input:focus {
+    box-shadow: none;
+  }
+  
+  .bg-color-info {
+    background-color: #00d69f;
+  }
+  
+  .border-color {
+    border-color: #ececec;
+  }
+  
+  .btn {
+    padding: 16px 30px;
+  }
+  
+  .back-to-wizard {
+    transform: translate(-50%, -139%) !important;
+  }
+  
+  .bg-success-color {
+    background-color: #87D185;
+  
+    &:focus {
+      background-color: #763cb0;
+    }
+  }
+  
+}

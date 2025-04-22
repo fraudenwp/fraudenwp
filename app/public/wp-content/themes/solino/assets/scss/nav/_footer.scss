@@ -1,0 +1,187 @@
+﻿@import "../base/base";
+
+footer {
+  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16rem;
+
+  @media only screen and (max-width: $tablet-h) {
+    gap: 4rem;
+  }
+
+  @media only screen and (max-width: $tablet-v) {
+    padding-top: 4rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+
+    @media only screen and (max-width: $tablet-h) {
+      padding: 0 1rem;
+    }
+
+    @media only screen and (max-width: $tablet-v) {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .scroll-down {
+      margin-left: auto;
+    }
+
+    ul {
+      display: flex;
+      gap: 2rem;
+    }
+
+    a, span {
+      font-size: 2.6rem;
+      color: $black;
+      font-weight: $font-medium;
+
+      @media only screen and (max-width: $tablet-h) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 5vw;
+
+    @media only screen and (max-width: $tablet-h) {
+      padding: 0 1rem;
+    }
+
+    @media only screen and (max-width: $tablet-v) {
+      flex-direction: column;
+    }
+
+    div {
+
+      @media only screen and (max-width: $tablet-v) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .logo {
+      @media only screen and (max-width: $tablet-v) {
+        width: 100%;
+        margin-bottom: 6rem;
+      }
+
+      img {
+        width: 35rem;
+        fill: $black;
+
+        @media only screen and (max-width: $tablet-v) {
+          width: 20rem;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4rem;
+
+      @media only screen and (max-width: $tablet-v) {
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      .social {
+        display: flex;
+        gap: 1rem;
+
+        li {
+          a {
+            &:hover {
+              i {
+                background: $yellow;
+              }
+            }
+            i {
+              width: 6rem;
+              height: 6rem;
+              background: $black;
+  
+              @media only screen and (max-width: $tablet-h) {
+                width: 5rem;
+                height: 5rem;
+              }
+  
+              svg {
+                width: 3rem;
+                fill: $white;
+  
+                @media only screen and (max-width: $tablet-h) {
+                  width: 2rem;
+                  height: 2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      a {
+        font-size: 4.4rem;
+        font-weight: $font-medium;
+        color: $black;
+
+        @media only screen and (max-width: $tablet-h) {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 2rem;
+    font-weight: $font-medium;
+
+    @media only screen and (max-width: $tablet-h) {
+      font-size: 1.6rem;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid $black .1rem;
+    height: 10rem;
+    font-size: 2rem;
+
+    @media only screen and (max-width: $tablet-h) {
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: auto;
+      padding: 4rem 1rem;
+      gap: 1rem;
+    }
+
+    a {
+      font-size: 2rem;
+      font-weight: $font-medium;
+
+      @media only screen and (max-width: $tablet-h) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

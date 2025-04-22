@@ -1,0 +1,237 @@
+@import "../base/base";
+
+.selectric-wrapper {
+	position: relative;
+	cursor: pointer;
+	
+	&.selectric-open {
+		.button {
+			&:after {
+				transform: rotate(180deg);
+			}
+		}
+
+		.selectric-items {
+			top: 100%;
+			@include fade-transition;
+			opacity: 1;
+			visibility: visible;
+			display: flex;
+		}
+	}
+
+	.selectric {
+		height: 6rem;
+		max-height: 10rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		span {
+	        font-size: 1.8rem;
+       		font-weight: $font-medium;
+		}
+
+		.button {
+			background-color: transparent;
+			color: transparent;
+			height: 100%;
+			padding: 0;
+
+			&:after {
+				content: " ";
+				position: relative;
+				width: 6rem;
+				height: 100%;
+				border: none;
+				color: transparent;
+				background: transparent url(../../assets/images/icons/arrow.svg) no-repeat center center;
+				background-size: 1.6rem;
+			}
+		}
+	}
+
+	.selectric-items {
+		display: none;
+		position: absolute;
+		top: 7rem;
+		left: 0;
+		background: $black;
+		border-radius: 1rem;
+		z-index: -1;
+		-webkit-box-shadow: 0 0 10px -6px;
+		box-shadow: 0 0 10px -6px;
+
+		.selectric-scroll {
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+
+			&::-webkit-scrollbar-track {
+				background-color: $black;
+			}
+
+			&::-webkit-scrollbar {
+				width: 6px;
+				background-color: $black;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: $white;
+			}
+
+			ul {
+				padding: .4rem;
+
+				li {
+					height: 5rem;
+					display: flex;
+					align-items: center;
+					font-size: 2rem;
+					font-weight: $font-medium;
+					@include fade-transition;
+					padding: 0 1rem;
+					border-radius: .5rem;
+					color: $white;
+
+					&:hover {
+						background: $white;
+						color: $black;
+					}
+				}
+			}
+		}
+
+		.disabled {
+			filter: alpha(opacity=50);
+			opacity: 0.5;
+			cursor: default;
+			background: none;
+			color: #666;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		.selectric-group {
+			.selectric-group-label {
+				font-weight: bold;
+				padding-left: 10px;
+				cursor: default;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				background: none;
+				color: #444;
+			}
+
+			&.disabled {
+				li {
+					filter: alpha(opacity=100);
+					opacity: 1;
+				}
+			}
+
+			li {
+				padding-left: 25px;
+			}
+		}
+	}
+
+}
+
+.selectric-responsive {
+	width: 100%;
+}
+
+.selectric-focus {
+	.selectric {
+	
+	}
+}
+
+.selectric-open {
+	z-index: 9999;
+
+	.selectric {
+		border-color: #c4c4c4;
+	}
+
+	.selectric-items {
+		display: block;
+	}
+}
+
+.selectric-disabled {
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	cursor: default;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.selectric-hide-select {
+	position: relative;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+
+	select {
+		position: absolute;
+		left: -100%;
+	}
+
+	&.selectric-is-native {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+
+		select {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			border: none;
+			z-index: 1;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			opacity: 0;
+		}
+	}
+}
+
+.selectric-input {
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 1px !important;
+	height: 1px !important;
+	outline: none !important;
+	border: none !important;
+	*font: 0/0 a !important;
+	background: none !important;
+}
+
+.selectric-temp-show {
+	position: absolute !important;
+	visibility: hidden !important;
+	display: block !important;
+}
+
+.selectric-above {
+	.selectric-items {
+		top: auto;
+		bottom: 100%;
+	}
+}

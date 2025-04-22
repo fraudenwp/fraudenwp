@@ -1,0 +1,276 @@
+﻿
+@import "../base/_base";
+
+$akzidenz-bold: 'Akzidenz-Grotesk Pro Bold Ext';
+$akzidenz-med: 'Akzidenz-Grotesk Pro Med Ext';
+
+/*Device Resolution */
+$desktop: 1920px;
+$desktop-sm: 1368px;
+$tablet-h: 1024px;
+$tablet-v: 768px;
+$phone: 648px;
+
+hr {
+  border: solid $black .1rem;
+  margin: 10rem 0;
+  display: flex;
+}
+
+[text-split]{
+  opacity: 0;
+
+  @media only screen and (max-width: $tablet-h) {
+      opacity: 1;
+   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    strong {
+        font-weight: $font-medium;
+    }
+}
+
+h1 {
+    font-size: clamp(5rem, 12vw, 8.4rem);
+    line-height: 1;
+    
+    @media only screen and (max-width: $tablet-h) {
+        font-size: clamp(4rem, 12vw, 6rem);
+      }
+
+      @media only screen and (max-width: $tablet-v) {
+        font-size: clamp(3.2rem, 12vw, 4rem);
+      }
+}
+
+h4 {
+    font-size: clamp(3rem, 12vw, 3.4rem);
+    line-height: 1;
+}
+
+h5 {
+    font-size: clamp(3rem, 12vw, 5.4rem);
+    line-height: 1;
+
+    @media only screen and (max-width: $tablet-h) {
+        font-size: clamp(2rem, 12vw, 2.8rem);
+      }
+}
+
+h6 {
+  font-size: clamp(3.8rem, 12vw, 5.4rem);
+  font-weight: $font-medium;
+
+  @media only screen and (max-width: $desktop) {
+      font-size: clamp(3rem, 12vw, 5rem);
+      margin-bottom: 2rem;
+    }
+
+    @media only screen and (max-width: $tablet-h) {
+      font-size: clamp(3rem, 12vw, 3rem);
+    }
+}
+
+.head-item {
+  border-top: solid $black .1rem;
+  margin: 9rem 5vw 0;
+
+  @media only screen and (max-width: $tablet-h) {
+    margin: 5rem 1rem 0;
+  }
+
+  &.bn {
+    border: none;
+    .caption {
+      padding-top: 0;
+    }
+  }
+
+  &.border-bottom {
+    border-top: none;
+    border-bottom: solid $black .1rem;
+    padding-bottom: 8rem;
+  }
+
+  i {
+    font-size: 2rem;
+  }
+
+  &.type-2 {
+    margin: 0 5vw 9rem;
+
+    @media only screen and (max-width: $tablet-h) {
+      margin: 0 1rem 5rem;
+    }
+  }
+
+  &.type-3 {
+    margin: 0 5vw 4rem;
+
+    @media only screen and (max-width: $tablet-h) {
+      margin: 0 1rem 3rem;
+    }
+  }
+
+  &.type-4 {
+    span {
+      margin-top: 10rem;
+
+      @media only screen and (max-width: $tablet-h) {
+        margin-top: 4rem;
+        max-width: 100%;
+        padding: 0;
+      }
+    }
+  }
+
+  &.type-5 {
+    margin: 0 5vw 0;
+  }
+
+  &.center {
+    text-align: center;
+    
+    h6 {
+      padding: 9rem 0 2rem;
+
+      @media only screen and (max-width: $tablet-h) {
+        padding: 6rem 0 0rem;
+      }
+    }
+
+    .button {
+      margin: 2rem auto;
+    }
+
+    .head-caption {
+      max-width: 70rem;
+      margin: auto;
+    }
+  }
+
+  small {
+    font-size: 1.4rem;
+    padding-top: 2.4rem;
+    font-weight: $font-medium;
+    display: flex;
+  }
+
+  span {
+    font-size: clamp(2.6rem, 12vw, 3rem);
+    font-weight: $font-medium;
+    display: flex;
+    padding-right: 10rem;
+  }
+
+  p {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    font-weight: $font-medium;
+  }
+
+  h5 {
+    margin-bottom: 6rem;
+  }
+
+  .caption {
+    display: flex;
+    padding-top: 10rem;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $tablet-h) {
+      padding-top: 4rem;
+      flex-direction: column;
+    }
+
+    h6 {
+      max-width:50rem;
+      display: flex;
+      flex-direction: column;
+
+      @media only screen and (max-width: $tablet-h) {
+        max-width:100%;
+      }
+
+      small {
+        margin-bottom: 7.8rem;
+      }
+    }
+
+    .item {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      padding-left: 5rem;
+
+      @media only screen and (max-width: $tablet-h) {
+        padding-left: 0;
+        width: 100%;
+      }
+
+      p {
+        font-size: clamp(1.6rem, 12vw, 1.8rem);
+        line-height: 1.6;
+        font-weight: $font-medium;
+
+        @media only screen and (max-width: $tablet-h) {
+          font-size: clamp(1.4rem, 12vw, 1.6rem);
+        }
+      }
+    }
+
+    .list {
+      width: 100%;
+      padding: 6rem 10rem 6rem 4rem;
+
+      @media only screen and (max-width: $tablet-h) {
+        padding: 4rem 4em 6rem 2rem;
+      }
+    }
+  }
+
+  hr {
+    margin: 10rem 0 0;
+
+    &.mb {
+      margin-bottom: 9rem;
+    }
+  }
+}
+
+.content-caption {
+  display: flex;
+  gap: 8rem;
+  margin: 10rem 0;
+
+  @media only screen and (max-width: $tablet-h) {
+    margin: 4rem 0;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .item {
+    width: 50%;
+
+    @media only screen and (max-width: $tablet-h) {
+      width: 100%;
+    }
+  
+
+    p {
+      font-size: 2.6rem;
+      font-weight: $font-medium;
+
+      @media only screen and (max-width: $tablet-h) {
+        font-size: 2rem;
+      }
+    }
+
+    &:first-child {
+      padding-left: 4rem;
+      border-left: solid $black .1rem;
+    }
+  }
+}

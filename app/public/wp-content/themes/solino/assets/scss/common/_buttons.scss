@@ -1,0 +1,200 @@
+﻿@import "../base/base";
+
+.button,
+button {
+  width: fit-content;
+  height: 6rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  background: $black;
+  border-radius: 100vmax;
+  cursor: pointer;
+  padding: 0 3rem;
+  @include fade-transition;
+  font-size: 2rem;
+  font-weight: $font-medium;
+
+  @media only screen and (max-width: $tablet-h) {
+    height: 5rem;
+    padding: 0 3rem;
+  }
+  
+  &.primary {
+    background: $yellow;
+    color: $black;
+
+    &:hover {
+      background: $black;
+      color: $white;
+      @include fade-transition;
+
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
+  &.secondary {
+    background: #FF4801;
+
+    &:hover {
+      background: $black;
+      color: $white;
+      @include fade-transition;
+
+      svg {
+        fill: $white;
+      }
+    }
+  }
+  
+  &.dark {
+    background: $black;
+    color: $white;
+
+    &:hover {
+      background: $yellow;
+      color: $black;
+      @include fade-transition;
+    }
+  }
+
+  &.light {
+    background: $white;
+    color: $black;
+
+    &:hover {
+      background: $yellow;
+      color: $black;
+      @include fade-transition;
+    }
+  }
+
+  &.border {
+    background: none;
+    
+    &.light {
+      color: $white;
+      border: solid $white .1rem;
+
+      &:hover {
+        background: $white;
+        color: $black;
+        @include fade-transition;
+      }
+    }
+
+    &.dark {
+      color: $black;
+      border: solid $black .1rem;
+
+      &:hover {
+        background: $black;
+        color: $white;
+        @include fade-transition;
+      }
+    }
+  }
+}
+
+
+.link {
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+
+  &::before,
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: .1rem;
+    background: $white;
+    top: 100%;
+    left: 0;
+    pointer-events: none;
+  }
+
+  &::before {
+    content: '';
+    /* show by default */
+  }
+
+  &.line-animated {
+
+    &::before {
+      transform-origin: 100% 50%;
+      transform: scale3d(0, 1, 1);
+      transition: transform 0.3s;
+    }
+
+    &:hover::before {
+      transform-origin: 0% 50%;
+      // transform: scale3d(1, 2, 1);
+      transform: scale3d(1, 1.4, 1);
+    }
+  }
+}
+
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  .prev, .next {
+
+    svg {
+      fill: $black;
+    }
+
+    &:hover {
+      background: $black;
+      @include fade-transition;
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
+  .prev {
+    margin-right: 1rem;
+    border: none;
+  }
+
+  .next {
+    margin-left: 1rem;
+    border: none;
+  }
+
+  a {
+    &:hover {
+      background: $black;
+      @include fade-transition;
+      color: $white;
+    }
+  }
+
+   a {
+     width: 6rem;
+     height: 6rem;
+     border-radius: 100%;
+     border: solid $black .1rem;
+     font-size: 1.4rem;
+     color: $black;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-shrink: 0;
+
+     @media only screen and (max-width: $tablet-h) {
+      width: 4rem;
+      height: 4rem;
+      font-size: 1.2rem;
+    }
+   }
+}
