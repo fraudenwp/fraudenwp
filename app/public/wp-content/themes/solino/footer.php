@@ -56,7 +56,7 @@
 							<a href="/aydinlatma-metni">Aydınlatma Metni</a>
 						<?php endif; ?>
                     </div>
-                    <a href="https://super-agency.com/?solino" target="_blank">Made by SuperAgency</a>
+                    <a href="https://super-agency.com/?solino" target="_blank">Made by Frauden</a>
                 </div>
             </footer>
         </div>
